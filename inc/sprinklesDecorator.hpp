@@ -13,7 +13,6 @@ public:
     double getPrice();
     std::string getText();
 };
-#endif
 
  double SprinklesDecorator::getPrice()
  {
@@ -29,3 +28,5 @@ std::string SprinklesDecorator::getText()
     text.append(", sprinkles");
     return text;
 }
+
+#endif

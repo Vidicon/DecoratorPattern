@@ -3,16 +3,15 @@
 
 #include "IIceCream.hpp"
 #include <string>
+#include <iostream>
 
 class ChocolateIceCream : public IIceCream
 {
 public:
     ChocolateIceCream(){};
-    ~ChocolateIceCream(){};
     double getPrice();
     std::string getText();
 };
-#endif
 
 double ChocolateIceCream::getPrice()
 {
@@ -24,3 +23,5 @@ std::string ChocolateIceCream::getText()
     std::string text = "Chocolate IceCream";
     return text;
 }
+
+#endif

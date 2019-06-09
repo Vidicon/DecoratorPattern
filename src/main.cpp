@@ -12,29 +12,41 @@
 #include "sprinklesDecorator.hpp"
 #include "nutsDecorator.hpp"
 
-void printIce(IIceCream& i)
+void printIce(IIceCream &i)
 {
-    std::cout << "text: "<< i.getText() << std::endl;
-    std::cout << "price: "<< i.getPrice() << std::endl;
+    std::cout << "text: " << i.getText() << std::endl;
+    std::cout << "price: " << i.getPrice() << std::endl;
 }
 
 int main(int argc, char *argv[])
 {
-   // IIceCream* iceCream = new StrawberryIceCream();
+    std::cout << std::endl << "IceCream #1:"  << std::endl;
+    IIceCream *iceCream = new ChocolateIceCream();
+    iceCream = new SprinklesDecorator(iceCream);
+    iceCream = new WhippedCreamDecorator(iceCream);
+    printIce(*iceCream);
+    delete iceCream;
+    iceCream = NULL;
 
-   // iceCream = new SprinklesDecorator(iceCream);
+    std::cout << std::endl << "IceCream #2:"  << std::endl;
+    iceCream = new StrawberryIceCream();
+    iceCream = new NutsDecorator(iceCream);
+    printIce(*iceCream);
+    delete iceCream;
+    iceCream = NULL;
 
-   // printIce(*iceCream);
+    std::cout << std::endl << "IceCream #3: (nuts only)"  << std::endl;
+    iceCream = new NutsDecorator(NULL);
+    printIce(*iceCream);
+    delete iceCream;
+    iceCream = NULL;
 
-    IIceCream* VanilaIceCreamWithNuts = new NutsDecorator(new VanillaIceCream());
+    std::cout << std::endl << "IceCream #4:"  << std::endl;
+    IIceCream *VanilaIceCreamWithAll = new WhippedCreamDecorator(new SprinklesDecorator(new NutsDecorator(new VanillaIceCream())));
+    printIce(*VanilaIceCreamWithAll);
 
-    printIce(*VanilaIceCreamWithNuts);
-   
-   // delete iceCream;
-   // iceCream = NULL;
-
-    delete VanilaIceCreamWithNuts;
-    VanilaIceCreamWithNuts = NULL;
+    delete VanilaIceCreamWithAll;
+    VanilaIceCreamWithAll = NULL;
 
     return 0;
 }

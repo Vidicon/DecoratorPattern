@@ -10,7 +10,6 @@ class NutsDecorator : public IceCreamDecorator
 {
 public:
     NutsDecorator(IIceCream* iceCream):IceCreamDecorator(iceCream){};
-    ~NutsDecorator(){IceCreamDecorator::Clear();};
     double getPrice();
     std::string getText();
 };

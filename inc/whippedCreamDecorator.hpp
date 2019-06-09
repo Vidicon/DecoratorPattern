@@ -10,11 +10,9 @@ class WhippedCreamDecorator : public IceCreamDecorator
 {
 public:
     WhippedCreamDecorator(IIceCream* iceCream):IceCreamDecorator(iceCream){};
-    ~WhippedCreamDecorator(){IceCreamDecorator::Clear();};
     double getPrice();
     std::string getText();
 };
-#endif
 
  double WhippedCreamDecorator::getPrice()
  {
@@ -30,3 +28,5 @@ std::string WhippedCreamDecorator::getText()
     text.append(", wippedCream");
     return text;
 }
+
+#endif

@@ -12,7 +12,6 @@ public:
     double getPrice();
     std::string getText();
 };
-#endif
 
 double VanillaIceCream::getPrice()
 {
@@ -24,3 +23,5 @@ std::string VanillaIceCream::getText()
     std::string text = "Vanilla IceCream";
     return text;
 }
+
+#endif

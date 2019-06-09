@@ -8,11 +8,10 @@ class StrawberryIceCream : public IIceCream
 {
 public:
     StrawberryIceCream(){};
-    ~StrawberryIceCream(){};
     double getPrice();
     std::string getText();
 };
-#endif
+
 
 double StrawberryIceCream::getPrice()
 {
@@ -25,3 +24,5 @@ std::string StrawberryIceCream::getText()
     std::string text = "Strawberry IceCream";
     return text;
 }
+
+#endif
